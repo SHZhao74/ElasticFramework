@@ -1,0 +1,24 @@
+{
+  "apps":[
+    {
+      "appName":"NTU",
+      "history": 
+      [
+        {
+          "argv":10,
+          "exeTime": 150,
+          "exeStv": 20,
+          "netTime": 300,
+          "netStv": 33
+        },
+        { 
+          "argv":20,
+          "exeTime": 250,
+          "exeStv": 40,
+          "netTime": 600,
+          "netStv": 63
+        }
+      ]
+    }
+  ]
+}

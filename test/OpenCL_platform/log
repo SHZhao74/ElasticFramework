@@ -1,0 +1,93 @@
+==23300== Memcheck, a memory error detector
+==23300== Copyright (C) 2002-2011, and GNU GPL'd, by Julian Seward et al.
+==23300== Using Valgrind-3.7.0 and LibVEX; rerun with -h for copyright info
+==23300== Command: ./a.out
+==23300== 
+==23300== Syscall param socketcall.sendto(msg) points to uninitialised byte(s)
+==23300==    at 0x542CDA2: send (send.c:28)
+==23300==    by 0x645545C: newscl::SockSend(int, char const*, unsigned int) (IO.cc:26)
+==23300==    by 0x64533E8: newscl::SocketIOClient::Send(char const*, unsigned int) (IO.h:36)
+==23300==    by 0x645245C: newscl::GetPlatform() (newscl.cc:855)
+==23300==    by 0x644E7EA: clIcdGetPlatformIDsKHR (cl_icd.cc:187)
+==23300==    by 0x4E341A3: ??? (in /usr/lib/fglrx/libOpenCL.so.1)
+==23300==    by 0x4E35EA2: ??? (in /usr/lib/fglrx/libOpenCL.so.1)
+==23300==    by 0x4E3560F: clGetPlatformIDs (in /usr/lib/fglrx/libOpenCL.so.1)
+==23300==    by 0x400D9B: main (NDRange.cc:18)
+==23300==  Address 0x7fefff414 is on thread 1's stack
+==23300== 
+get connection()
+get connection()
+get connection()
+get connection()
+==23300== Syscall param socketcall.sendto(msg) points to uninitialised byte(s)
+==23300==    at 0x542CDA2: send (send.c:28)
+==23300==    by 0x645545C: newscl::SockSend(int, char const*, unsigned int) (IO.cc:26)
+==23300==    by 0x64533E8: newscl::SocketIOClient::Send(char const*, unsigned int) (IO.h:36)
+==23300==    by 0x6450906: newscl::clCreateBuffer(_cl_context*, unsigned long, unsigned long, void*, int*) (newscl.cc:521)
+==23300==    by 0x401312: main (NDRange.cc:87)
+==23300==  Address 0x7fefffa50 is on thread 1's stack
+==23300== 
+==23300== Syscall param socketcall.sendto(msg) points to uninitialised byte(s)
+==23300==    at 0x542CDA2: send (send.c:28)
+==23300==    by 0x645545C: newscl::SockSend(int, char const*, unsigned int) (IO.cc:26)
+==23300==    by 0x64533E8: newscl::SocketIOClient::Send(char const*, unsigned int) (IO.h:36)
+==23300==    by 0x64512C5: newscl::clEnqueueNDRangeKernel(_cl_command_queue*, _cl_kernel*, unsigned int, unsigned long const*, unsigned long const*, unsigned long const*, unsigned int, _cl_event* const*, _cl_event**) (newscl.cc:662)
+==23300==    by 0x40145C: main (NDRange.cc:107)
+==23300==  Address 0x7fefff505 is on thread 1's stack
+==23300== 
+send finishing start
+==23300== Syscall param socketcall.sendto(msg) points to uninitialised byte(s)
+==23300==    at 0x542CDEC: send (send.c:33)
+==23300==    by 0x645545C: newscl::SockSend(int, char const*, unsigned int) (IO.cc:26)
+==23300==    by 0x64533E8: newscl::SocketIOClient::Send(char const*, unsigned int) (IO.h:36)
+==23300==    by 0x644F3C5: newscl::clFinish(_cl_command_queue*) (newscl.cc:153)
+==23300==    by 0x401527: main (NDRange.cc:115)
+==23300==  Address 0x7fefff4c8 is on thread 1's stack
+==23300== 
+send finishing end
+ack finishing start
+recv OKack finishing end
+==23300== Syscall param socketcall.sendto(msg) points to uninitialised byte(s)
+==23300==    at 0x542CDEC: send (send.c:33)
+==23300==    by 0x645545C: newscl::SockSend(int, char const*, unsigned int) (IO.cc:26)
+==23300==    by 0x64533E8: newscl::SocketIOClient::Send(char const*, unsigned int) (IO.h:36)
+==23300==    by 0x644EEDA: newscl::clReleaseMemObject(_cl_mem*) (newscl.cc:72)
+==23300==    by 0x401565: main (NDRange.cc:121)
+==23300==  Address 0x7fefff4c8 is on thread 1's stack
+==23300== 
+==23300== 
+==23300== HEAP SUMMARY:
+==23300==     in use at exit: 16,604 bytes in 32 blocks
+==23300==   total heap usage: 181 allocs, 149 frees, 86,611 bytes allocated
+==23300== 
+==23300== 8 bytes in 1 blocks are definitely lost in loss record 4 of 19
+==23300==    at 0x4C2B6CD: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23300==    by 0x4E34176: ??? (in /usr/lib/fglrx/libOpenCL.so.1)
+==23300==    by 0x4E35EA2: ??? (in /usr/lib/fglrx/libOpenCL.so.1)
+==23300==    by 0x4E3560F: clGetPlatformIDs (in /usr/lib/fglrx/libOpenCL.so.1)
+==23300==    by 0x400D9B: main (NDRange.cc:18)
+==23300== 
+==23300== 266 (72 direct, 194 indirect) bytes in 1 blocks are definitely lost in loss record 13 of 19
+==23300==    at 0x4C2B1C7: operator new(unsigned long) (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23300==    by 0x6451B3F: newscl::clCreateKernel(_cl_program*, char const*, int*) (newscl.cc:747)
+==23300==    by 0x401287: main (NDRange.cc:75)
+==23300== 
+==23300== 288 bytes in 1 blocks are possibly lost in loss record 14 of 19
+==23300==    at 0x4C29DB4: calloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==23300==    by 0x4012074: _dl_allocate_tls (dl-tls.c:297)
+==23300==    by 0x56FFABC: pthread_create@@GLIBC_2.2.5 (allocatestack.c:571)
+==23300==    by 0x6450586: newscl::clEnqueueReadBuffer(_cl_command_queue*, _cl_mem*, unsigned int, unsigned long, unsigned long, void*, unsigned int, _cl_event* const*, _cl_event**) (newscl.cc:485)
+==23300==    by 0x401512: main (NDRange.cc:114)
+==23300== 
+==23300== LEAK SUMMARY:
+==23300==    definitely lost: 80 bytes in 2 blocks
+==23300==    indirectly lost: 194 bytes in 4 blocks
+==23300==      possibly lost: 288 bytes in 1 blocks
+==23300==    still reachable: 16,042 bytes in 25 blocks
+==23300==         suppressed: 0 bytes in 0 blocks
+==23300== Reachable blocks (those to which a pointer was found) are not shown.
+==23300== To see them, rerun with: --leak-check=full --show-reachable=yes
+==23300== 
+==23300== For counts of detected and suppressed errors, rerun with: -v
+==23300== Use --track-origins=yes to see where uninitialised values come from
+==23300== ERROR SUMMARY: 9 errors from 8 contexts (suppressed: 2 from 2)

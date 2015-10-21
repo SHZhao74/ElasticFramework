@@ -1,0 +1,15 @@
+;; Object cn/
+;; SEMANTICDB Tags save file
+(semanticdb-project-database-file "cn/"
+  :tables (list 
+   (semanticdb-table "VMAFS_N_Scheduler.cc"
+    :major-mode 'c++-mode
+    :tags '(("./VMAFS_N_Scheduler.h" include nil nil [1 33]) ("math.h" include (:system-flag t) nil [35 52]) ("pthread.h" include (:system-flag t) nil [53 73]) ("algorithm" include (:system-flag t) nil [75 95]) ("memory" include (:system-flag t) nil [96 113]) ("./common.h" include nil nil [115 136]) ("./cn.h" include nil nil [137 154]) ("Instance" function (:parent "VMAFS_N_Scheduler" :type ("std::unique_ptr" type (:type "class") nil nil)) nil [206 672]) ("VMAFS_N_Scheduler" function (:constructor-flag t :parent "VMAFS_N_Scheduler" :type ("VMAFS_N_Scheduler" type (:type "class") nil nil)) nil [673 850]) ("CreateVM" function (:parent "VMAFS_N_Scheduler" :arguments (("weight" variable (:type "double") (reparse-symbol arg-sub-list) [899 913])) :type ("shared_ptr" type (:type "class") nil nil)) nil [852 1109]) ("DestroyVM" function (:parent "VMAFS_N_Scheduler" :arguments (("vm" variable (:type ("shared_ptr" type (:type "class") nil nil)) (reparse-symbol arg-sub-list) [1143 1165])) :type "int") nil [1110 1803]) ("Lock" function (:parent "VMAFS_N_Scheduler" :type "void") nil [1805 1874]) ("Unlock" function (:parent "VMAFS_N_Scheduler" :type "void") nil [1876 1949]) ("InOrderSchedule" function (:parent "VMAFS_N_Scheduler" :type ("std::shared_ptr" type (:type "class") nil nil)) nil [1951 4875]))
+    :file "VMAFS_N_Scheduler.cc"
+    :pointmax 4876
+    )
+   )
+  :file "semantic.cache"
+  :semantic-tag-version "2.0pre4"
+  :semanticdb-version "2.0pre4"
+  )

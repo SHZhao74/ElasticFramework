@@ -1,0 +1,16 @@
+{
+         "capacity": 1,
+         "weight": 1,
+         "used_time": 0,
+         "apps": [
+                 {
+                         "name": "app",
+                         "profiling": [
+                                {
+                                        "utility": 1,
+                                         "time": 1
+                                }
+                        ]
+                 }
+        ]
+}
